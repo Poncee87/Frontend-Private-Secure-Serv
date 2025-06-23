@@ -10,8 +10,8 @@ const CarDetails = ({ car, onUpdatePurchase, onDeletePurchase }) => {
       {/* Header con logo */}
       <div className="car-details-header">
         <div className="logo-container">
-          <h1 className="logo-text">SEGURO</h1>
-          <span className="logo-subtitle">Serie</span>
+          <h1 className="logo-text">SECURO</h1>
+          <span className="logo-subtitle">Serv</span>
         </div>
       </div>
 
@@ -21,7 +21,7 @@ const CarDetails = ({ car, onUpdatePurchase, onDeletePurchase }) => {
           {/* Título y precio */}
           <div className="car-title-section">
             <div className="car-brand-logo">
-              <img src="/images/brand/nissan-logo.png" alt="Nissan" className="brand-logo" />
+              <img src="/images/brand/nissan_1.png" alt="Nissan" className="brand-logo" />
             </div>
             <h2 className="car-title">{car.name || 'Nissan Skyline R34'}</h2>
             <div className="car-price">${car.price || '124,909'}</div>

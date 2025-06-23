@@ -18,7 +18,7 @@ const CarDetailsPage = () => {
     reservePrice: '33,000',
     brand: 'Nissan',
     mainImage: '/images/cars/gallery/Sline-principal.png',
-    image2: '/images/cars/backgrounds/dashboard-bg.jpg',
+    image2: '/images/cars/gallery/Syline-Lateral.png',
     description: `El Nissan Skyline GT-R R34 es un automóvil deportivo icónico producido por Nissan entre 1999 y 2002. Es parte de la legendaria línea Skyline GT-R, conocida por su rendimiento y tecnología avanzada. El R34 es especialmente famoso por su motor RB26DETT, un motor biturbo de 2,6 litros en línea de seis cilindros, que ofrece una potencia impresionante y una gran capacidad de modificación.`,
     additionalInfo: `El R34 también se destaca por su sistema de tracción integral ATTESA E-TS y su sistema de suspensión HICAS, que mejoran su manejo y estabilidad. Además, su diseño agresivo y su presencia en la cultura popular, especialmente en películas y videojuegos como "Fast & Furious" y la serie "Gran Turismo", lo han convertido en un coche de culto entre los entusiastas del automovilismo. Es considerado uno de los GT-R más emblemáticos y deseados de la historia.`
   };
