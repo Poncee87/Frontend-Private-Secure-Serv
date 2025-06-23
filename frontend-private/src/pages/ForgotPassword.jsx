@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthLayout from '../components/layout/AuthLayout';
+import { AuthLayout } from '../components/layout/AuthLayout'
 import ForgotPasswordForm from '../components/forms/ForgotPasswordForm';
 import CheckEmailForm from '../components/forms/CheckEmailForm';
 import { authService } from '../services/authService';
-import { Toast } from '../components/ui/Toast';
+
 
 const ForgotPassword = () => {
   const navigate = useNavigate();

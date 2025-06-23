@@ -56,11 +56,11 @@ const LoginForm = () => {
 
         <div className="form-links">
           <span>¿No tienes una cuenta? </span>
-          <a href="#register" className="link-register">Regístrate ahora</a>
+          <a href="/Register" className="link-register">Regístrate ahora</a>
         </div>
 
         <div className="form-links">
-          <a href="#forgot-password" className="link-forgot">¿Olvidaste tu contraseña?</a>
+          <a href="/ForgotPassword" className="link-forgot">¿Olvidaste tu contraseña?</a>
         </div>
 
         <div className="form-submit">

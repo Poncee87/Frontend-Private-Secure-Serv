@@ -1,4 +1,4 @@
-import { httpClient } from './httpClient';
+
 
 export const authService = {
   // ... métodos existentes (login, register, logout, etc.)
@@ -6,7 +6,7 @@ export const authService = {
   // Password Recovery Methods
   forgotPassword: async (email) => {
     try {
-      const response = await httpClient.post('/auth/forgot-password', { 
+      const response = await httpClient.post('/auth/ForgotPassword', { 
         email: email.toLowerCase().trim() 
       });
       return response.data;
