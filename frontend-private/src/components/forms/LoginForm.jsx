@@ -1,121 +1,72 @@
+// src/components/forms/LoginForm.jsx
 import React, { useState } from 'react';
 import InputText from '../common/InputText';
 import Button from '../common/Button';
-import ErrorMessage from '../common/ErrorMessage';
-import LoadingSpinner from '../common/LoadingSpinner';
 
-const LoginForm = ({ onSubmit, isLoading, error, onForgotPassword, onSwitchToRegister }) => {
+const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
 
-  const [errors, setErrors] = useState({});
-
-  const handleInputChange = (field, value) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-    
-    // Limpiar error del campo cuando el usuario empiece a escribir
-    if (errors[field]) {
-      setErrors(prev => ({
-        ...prev,
-        [field]: ''
-      }));
-    }
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'El correo electrónico es requerido';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'El correo electrónico no es válido';
-    }
-
-    if (!formData.password.trim()) {
-      newErrors.password = 'La contraseña es requerida';
-    } else if (formData.password.length < 6) {
-      newErrors.password = 'La contraseña debe tener al menos 6 caracteres';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (validateForm()) {
-      onSubmit(formData);
-    }
+    console.log('Login data:', formData);
+    // Aquí iría la lógica de login
   };
 
   return (
-    <div className="login-form-container">
+    <div className="login-form">
       <div className="form-header">
-        <h1 className="form-title">Bienvenido</h1>
-        <p className="form-subtitle">Ingresa tus datos para iniciar sesión</p>
+        <h1>Bienvenido</h1>
+        <p>Ingresa tus datos para iniciar sesión</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="login-form">
-        {error && <ErrorMessage message={error} />}
-        
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <InputText
+            label="Correo Electrónico"
             type="email"
-            placeholder="Correo Electrónico"
+            name="email"
             value={formData.email}
-            onChange={(value) => handleInputChange('email', value)}
-            error={errors.email}
-            disabled={isLoading}
+            onChange={handleChange}
+            placeholder=""
+            required
           />
         </div>
 
         <div className="form-group">
           <InputText
+            label="Contraseña"
             type="password"
-            placeholder="Contraseña"
+            name="password"
             value={formData.password}
-            onChange={(value) => handleInputChange('password', value)}
-            error={errors.password}
-            disabled={isLoading}
+            onChange={handleChange}
+            placeholder=""
+            required
           />
-        </div>
-
-        <div className="form-actions">
-          <Button
-            type="submit"
-            variant="primary"
-            fullWidth
-            disabled={isLoading}
-            className="login-button"
-          >
-            {isLoading ? <LoadingSpinner size="small" /> : 'Ingresar'}
-          </Button>
         </div>
 
         <div className="form-links">
-          <button
-            type="button"
-            onClick={onForgotPassword}
-            className="forgot-password-link"
-            disabled={isLoading}
-          >
-            ¿No tienes una cuenta? <span className="">Regístrate</span> ahora.
-          </button>
-          
-          <button
-            type="button"
-            onClick={onSwitchToRegister}
-            className="register-link"
-            disabled={isLoading}
-          >
-            ¿Olvidaste tu <span className="">contraseña</span>?
-          </button>
+          <span>¿No tienes una cuenta? </span>
+          <a href="#register" className="link-register">Regístrate ahora</a>
+        </div>
+
+        <div className="form-links">
+          <a href="#forgot-password" className="link-forgot">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <div className="form-submit">
+          <Button type="submit" variant="primary">
+            Ingresar
+          </Button>
         </div>
       </form>
     </div>

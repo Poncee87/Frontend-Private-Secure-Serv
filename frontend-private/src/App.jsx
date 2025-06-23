@@ -1,7 +1,8 @@
 // En src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";  // ✅ Usa tu página Login existente
+import Login from "./pages/Login";
+import CarDetails from "./pages/CarDetails";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
-          {/* Otras rutas */}
+          <Route path="/CarDetails" element={<CarDetails />} />
         </Routes>
       </div>
     </Router>

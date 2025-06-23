@@ -8,6 +8,7 @@ import ForgotPassword from '../pages/ForgotPassword';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound';
+import CarDetailsPage from '../pages/CarDetails';
 
 // Importar nueva página
 import ResetPassword from '../pages/ResetPassword';
@@ -25,6 +26,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/car-details/:id" element={<CarDetailsPage />} />
           
           {/* Ruta raíz redirige a login */}
           <Route path="/" element={<Login />} />
